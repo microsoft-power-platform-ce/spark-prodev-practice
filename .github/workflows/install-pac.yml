@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install pac
-        run: >
+        run: |
           ./pwsh/Install-Pac.ps1 `
-            "${{ runner.os }}"
-            "${{ runner.temp }}/pac"
+            "${{ runner.os }}" `
+            "${{ runner.temp }}" `
             "github"
         shell: pwsh
       - run: pac help
