@@ -64,7 +64,7 @@ switch ($Platform) {
     Write-Host "##vso[task.prependpath]$DestinationFolder/pac"
   }
   "github" {
-    Write-Output "$HOME/.local/bin" |
+    Write-Output "$DestinationFolder/pac" |
       Out-File `
         -FilePath $env:GITHUB_PATH `
         -Encoding utf8 `
