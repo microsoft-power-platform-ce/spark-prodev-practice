@@ -1,10 +1,10 @@
-name: Install PAC
+name: Install pac-wrap
 
 on:
   push:
 
 jobs:
-  install-pac:
+  install-pac-wrap:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
