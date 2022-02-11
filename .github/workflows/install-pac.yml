@@ -2,6 +2,9 @@ name: Install pac
 
 on:
   push:
+    paths:
+      - pwsh/Install-Pac.ps1
+      - .github/workflows/install-pac.yml
 
 jobs:
   install-pac:
