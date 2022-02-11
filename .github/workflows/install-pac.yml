@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install PAC
         run: |
-          ./pwsh/Install-Pac.ps1 `
+          & ./pwsh/Install-Pac.ps1 `
             "${{ runner.os }}" `
             "${{ runner.temp }}/pac" `
             "github"
