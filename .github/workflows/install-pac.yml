@@ -1,0 +1,19 @@
+name: Install PAC
+
+on:
+  push:
+
+jobs:
+  install-pac:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PAC
+        run: ./pwsh/Install-Pac.ps1
+        shell: pwsh
