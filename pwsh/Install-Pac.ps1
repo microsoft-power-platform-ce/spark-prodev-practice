@@ -19,7 +19,7 @@ $packageId = switch ($OperatingSystem) {
   { @("Darwin", "macOS") -contains $_ } {
     "Microsoft.PowerApps.CLI.Core.osx-x64"
   }
-  "Windows*" { "Microsoft.PowerApps.CLI" }
+  { $_ -match "^Windows" } { "Microsoft.PowerApps.CLI" }
 }
 Write-Host "package id: $packageId"
 
@@ -36,11 +36,11 @@ if(!(Test-Path $DestinationFolder)) {
 
 Invoke-WebRequest `
   -Uri "https://api.nuget.org/v3-flatcontainer/$id/$version/$id.$version.nupkg" `
-  -OutFile "$DestinationFolder/$packageId.nupkg"
-Write-Host "downloaded $packageId.nupkg"
+  -OutFile "$DestinationFolder/$packageId.zip"
+Write-Host "downloaded $packageId.zip"
 
 Expand-Archive `
-  "$DestinationFolder/$packageId.nupkg" `
+  "$DestinationFolder/$packageId.zip" `
   "$DestinationFolder/$packageId"
 Write-Host "extracted to $packageId"
 
