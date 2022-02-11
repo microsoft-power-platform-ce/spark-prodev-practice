@@ -1,5 +1,69 @@
-param(
-    [Parameter(Mandatory=$true)]
-    [string]$DestinationFolder
+param (
+  [Parameter(Mandatory=$true)]
+  [string]$OperatingSystem,
+  [Parameter(Mandatory=$true)]
+  [string]$DestinationFolder,
+  [Parameter(Mandatory=$true)]
+  [string]$Platform
 )
 
+if (Get-Command pac -ErrorAction Ignore)
+{
+  # exit
+}
+
+Write-Host "downloading pac..."
+
+$packageId = switch ($OperatingSystem) {
+  "Linux" { "Microsoft.PowerApps.CLI.Core.linux-x64" }
+  { @("Darwin", "macOS") -contains $_ } {
+    "Microsoft.PowerApps.CLI.Core.osx-x64"
+  }
+  "Windows*" { "Microsoft.PowerApps.CLI" }
+}
+Write-Host "package id: $packageId"
+
+$id = $packageId.ToLower()
+$packageInfo = Invoke-RestMethod `
+  "https://api.nuget.org/v3/registration5-semver1/$id/index.json"
+$version = $packageInfo.items[0].upper
+Write-Host "latest version: $version"
+
+if(!(Test-Path $DestinationFolder)) {
+  New-Item $DestinationFolder `
+    -ItemType Directory
+}
+
+Invoke-WebRequest `
+  -Uri "https://api.nuget.org/v3-flatcontainer/$id/$version/$id.$version.nupkg" `
+  -OutFile "$DestinationFolder/$packageId.nupkg"
+Write-Host "downloaded $packageId.nupkg"
+
+Expand-Archive `
+  "$DestinationFolder/$packageId.nupkg" `
+  "$DestinationFolder/$packageId"
+Write-Host "extracted to $packageId"
+
+Copy-Item `
+  "$DestinationFolder/$packageId/tools" `
+  "$DestinationFolder/pac" `
+  -Recurse
+Write-Host "copied tools subfolder to $DestinationFolder/pac"
+
+Write-Host "disabling telemetry"
+if (Get-Command chmod -ErrorAction Ignore) {
+  chmod 777 "$DestinationFolder/pac/pac"
+  Invoke-Expression "$DestinationFolder/pac/pac telemetry disable"
+} else {
+  Invoke-Expression "$DestinationFolder/pac/pac.exe telemetry disable"
+}
+
+Write-Host "Prepending pac folder to system path"
+switch ($Platform) {
+  "azdops" {
+    Write-Host "##vso[task.prependpath]$DestinationFolder/pac"
+  }
+  "github" {
+    echo "$HOME/.local/bin" >> $GITHUB_PATH
+  }
+}
