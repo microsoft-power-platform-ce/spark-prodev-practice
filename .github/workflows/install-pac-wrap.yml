@@ -17,4 +17,4 @@ jobs:
       - name: Install pac-wrap
         run: ./pwsh/Install-PacWrap.ps1
         shell: pwsh
-      - run: pac help
+      - run: pac-wrap help
