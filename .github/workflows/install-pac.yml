@@ -21,3 +21,4 @@ jobs:
             "${{ runner.temp }}/pac" `
             "github"
         shell: pwsh
+      - run: pac help
