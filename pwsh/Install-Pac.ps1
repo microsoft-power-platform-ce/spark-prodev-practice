@@ -50,13 +50,13 @@ Copy-Item `
   -Recurse
 Write-Host "copied tools subfolder to $DestinationFolder/pac"
 
-Write-Host "disabling telemetry"
 if (Get-Command chmod -ErrorAction Ignore) {
+  Write-Host "making pac executable"
   chmod 777 "$DestinationFolder/pac/pac"
-  Invoke-Expression "$DestinationFolder/pac/pac telemetry disable"
-} else {
-  Invoke-Expression "$DestinationFolder/pac/pac.exe telemetry disable"
 }
+
+Write-Host "disabling telemetry"
+Invoke-Expression "$DestinationFolder/pac/pac telemetry disable"
 
 Write-Host "Prepending pac folder to system path"
 switch ($Platform) {
