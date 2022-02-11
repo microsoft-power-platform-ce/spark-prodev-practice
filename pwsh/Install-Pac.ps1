@@ -9,7 +9,7 @@ param (
 
 if (Get-Command pac -ErrorAction Ignore)
 {
-  # exit
+  exit
 }
 
 Write-Host "downloading pac..."

@@ -1,4 +1,4 @@
-name: Install pac
+name: Install PAC
 
 on:
   push:
@@ -14,11 +14,7 @@ jobs:
           - windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install pac
-        run: |
-          & ./pwsh/Install-Pac.ps1 `
-            "${{ runner.os }}" `
-            "${{ runner.temp }}/pac" `
-            "github"
+      - name: Install pac-wrap
+        run: ./pwsh/Install-PacWrap.ps1
         shell: pwsh
       - run: pac help
