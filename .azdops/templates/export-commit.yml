@@ -27,7 +27,7 @@ jobs:
 
       # Reattach to branch (variable)
       # Configure user.name and user.email
-      - script: |
+      - pwsh: |
           git checkout ("$(Build.SourceBranch)" -replace "^refs/heads/", "")
           git config user.name "Automated Pipeline Commit on behalf of $(Build.QueuedBy)"
           git config user.email "PPALM-ALM-Build-Account"
