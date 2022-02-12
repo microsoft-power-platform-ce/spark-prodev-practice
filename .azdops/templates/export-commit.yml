@@ -1,15 +1,15 @@
 parameters:
   solutionName: ""
-  packageType: "Both"
-  clientId: ""
-  clientSecret: ""
-  tenantId: ""
-  url: ""
+  packageType: Both
+  environment: ""
 
 jobs:
   - job: Export_${{ parameters.solutionName }}_as_${{ parameters.packageType }}
     pool:
       vmImage: ubuntu-latest
+    variables:
+      - group: Credentials
+      - group: ${{ parameters.environment }}
     steps:
       - checkout: self
         persistCredentials: true
@@ -22,12 +22,12 @@ jobs:
           ./pwsh/Export-UnpackSolution.ps1 `
             -Name ${{ parameters.solutionName }} `
             -PackageType ${{ parameters.packageType }} `
-            -Url ${{ parameters.url }} `
-            -ClientId ${{ parameters.clientId }} `
-            -ClientSecret ${{ parameters.clientSecret }} `
-            -TenantId ${{ parameters.tenantId }}
+            -Url $(Url) `
+            -ClientId $(ClientId) `
+            -ClientSecret $(ClientSecret) `
+            -TenantId $(TenantId)
         displayName: Export / Unpack Solution
       - script: |
           git add .
-          git commit -m "Automated commit of ${{ parameters.SolutionName }} solution from ${{ parameters.targetEnvironment }} of type Both"
+          git commit -m "Automated commit of ${{ parameters.solutionName }} solution from ${{ parameters.environment }} of type ${{ parameters.packageType }}"
           git push

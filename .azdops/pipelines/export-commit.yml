@@ -3,8 +3,5 @@ trigger: none
 jobs:
   - template: ../templates/export-commit.yml
     parameters:
-      solutionName: "admin"
-      clientId: $(clientId)
-      clientSecret: $(clientSecret)
-      tenantId: $(tenantId)
-      url: $(url)
+      solutionName: admin
+      environment: Dev
