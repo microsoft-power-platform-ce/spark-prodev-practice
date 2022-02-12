@@ -9,6 +9,8 @@ param(
   [string]$TenantId
 )
 
+& $PSScriptRoot/Install-Pac.ps1
+
 pac auth create `
   --url $Url `
   --applicationId $ClientId `
