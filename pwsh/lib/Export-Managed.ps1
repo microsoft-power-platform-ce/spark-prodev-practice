@@ -7,14 +7,13 @@ param(
   [string]$Name
 )
 
+if ($PackageType -eq "Both") {
+  $managedPath = ($Path -Replace "\.zip$", "_managed.zip")
+} else {
+  $managedPath = $Path
+}
 pac solution export `
-  --path (
-      if ($PackageType -eq "Both") {
-        ($Path -Replace "\.zip$", "_managed.zip")
-      } else {
-        $Path
-      }
-    ) `
+  --path $managedPath `
   --name $Name `
   --managed `
   --async
