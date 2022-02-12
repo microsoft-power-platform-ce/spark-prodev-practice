@@ -2,6 +2,7 @@ param(
   [Parameter(Mandatory=$true)]
   [string]$Name,
   [string]$Path = "./$Name.zip",
+  [string]$Folder = "solutions/$Name/src"
   [string]$PackageType = "Both",
   [Parameter(Mandatory=$true)]
   [string]$Url,
@@ -13,15 +14,45 @@ param(
   [string]$TenantId
 )
 
-1..2 | ForEach-Object -Parallel {
-  switch ($_) {
-    1 {
-      
-    }
-    2 {
-      Write-Host "Started Job 2"
-      Start-Sleep 5
-      Write-Host "Finished Job 2"
+& $PSScriptRoot/Create-AuthProfile.ps1 `
+  -Url $Url `
+  -ClientId $ClientId `
+  -ClientSecret $ClientSecret `
+  -TenantId $TenantId
+
+function Export-Managed
+{
+  pac solution export `
+    --path (
+        if ($PackageType -eq "Both") {
+          ($Path -Replace "\.zip$", "_managed.zip")
+        } else {
+          $Path
+        }
+      ) `
+    --name $Name `
+    --managed `
+    --async
+}
+
+function Export-Unmanaged
+{
+  pac solution export `
+    --path $Path `
+    --name $Name `
+    --async
+}
+
+switch($PackageType)
+{
+  "Both" {
+    1..2 | ForEach-Object -Parallel {
+      switch ($_) {
+        1 { Export-Managed }
+        2 { Export-Unmanaged }
+      }
     }
   }
+  "Managed" { Export-Managed }
+  "Unmanaged" { Export-Unmanaged }
 }
