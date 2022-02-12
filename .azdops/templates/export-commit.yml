@@ -12,6 +12,9 @@ jobs:
       vmImage: ubuntu-latest
     steps:
 
+      - checkout: self
+        persistCredentials: true
+
       - pwsh: ./pwsh/Install-Pac.ps1
 
       - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
@@ -21,9 +24,6 @@ jobs:
           pac solution export  -p $(Pipeline.Workspace)/solutions/managed -n admin -a -m &
           wait 
           mv $(Pipeline.Workspace)/solutions/managed/${{ parameters.solutionName }}.zip $(Pipeline.Workspace)/solutions/${{ parameters.solutionName }}_managed.zip
-
-      - checkout: self
-        persistCredentials: true
 
       # Reattach to branch (variable)
       # Configure user.name and user.email
