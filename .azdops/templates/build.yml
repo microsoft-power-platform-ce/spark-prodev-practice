@@ -1,17 +1,19 @@
 parameters:
   solutionName: ""
 
-jobs:
-  - job: build_${{ parameters.solutionName }}
-    displayName: Build ${{ parameters.solutionName }}
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-      # Build .NET
-      # Build PCF
-      # Transpile / bundle TS/JS
-      - pwsh: |
-          ./pwsh/Compress-Solution.ps1 `
-            -Name ${{ parameters.solutionName }}
-      - publish: $(Build.ArtifactStagingDirectory)
-        artifact: solution-artifact
+stages:
+  - stage: build_${{ parameters.solutionName }}
+    jobs:
+      - job: build_${{ parameters.solutionName }}
+        displayName: Build ${{ parameters.solutionName }}
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          # Build .NET
+          # Build PCF
+          # Transpile / bundle TS/JS
+          - pwsh: |
+              ./pwsh/Compress-Solution.ps1 `
+                -Name ${{ parameters.solutionName }}
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: solution-artifact
