@@ -31,3 +31,4 @@ jobs:
           git add .
           git commit -m "Automated commit of ${{ parameters.solutionName }} solution from ${{ parameters.environment }} of type ${{ parameters.packageType }}"
           git push
+        displayName: Commit / Push
