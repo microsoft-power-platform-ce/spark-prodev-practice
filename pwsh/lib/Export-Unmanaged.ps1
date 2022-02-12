@@ -5,6 +5,8 @@ param(
   [string]$Name
 )
 
+& $PSScriptRoot/Install-Pac.ps1
+
 pac solution export `
   --path $Path `
   --name $Name `

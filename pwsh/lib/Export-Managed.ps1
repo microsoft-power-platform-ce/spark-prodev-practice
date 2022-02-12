@@ -7,6 +7,8 @@ param(
   [string]$Name
 )
 
+& $PSScriptRoot/Install-Pac.ps1
+
 if ($PackageType -eq "Both") {
   $managedPath = ($Path -Replace "\.zip$", "_managed.zip")
 } else {

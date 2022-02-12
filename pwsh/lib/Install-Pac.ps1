@@ -4,7 +4,6 @@ if (Get-Command pac -ErrorAction Ignore)
 }
 
 $platform = & $PSScriptRoot/Get-Platform.ps1
-Write-Host "Platform: $platform"
 switch($platform) {
   "azdops" {
     $destinationFolder = $env:AGENT_TEMPDIRECTORY
@@ -14,6 +13,20 @@ switch($platform) {
     $destinationFolder = $env:RUNNER_TEMP
     $operatingSystem = $env:RUNNER_OS
   }
+}
+
+function Set-PacAlias
+{
+  Set-Alias `
+    -Name pac `
+    -Value "$destinationFolder/pac/pac" `
+    -Scope Global
+}
+
+if (Test-Path "$destinationFolder/pac/pac")
+{
+  Set-PacAlias
+  exit
 }
 
 Write-Host "downloading pac..."
@@ -65,7 +78,4 @@ Invoke-Expression "$destinationFolder/pac/pac telemetry disable"
 Write-Host "Prepending pac folder to system path"
 & $PSScriptRoot/Add-Path.ps1 "$destinationFolder/pac"
 
-Set-Alias `
-  -Name pac `
-  -Value "$destinationFolder/pac/pac" `
-  -Scope Global
+Set-PacAlias
