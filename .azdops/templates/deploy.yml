@@ -1,1 +1,23 @@
 parameters:
+  solutionName: ""
+  SolutionType: ""
+  clientId: ""  
+  clientSecret: ""
+  tenantId: ""
+  url: ""
+
+jobs:
+  - deployment: Deploy_PowerPlatform_Solution
+    displayName: Deploy Power Platform Solution (${{ parameters.solutionName }})
+    pool:
+      vmImage: "ubuntu-latest"
+
+    # creates an environment if it doesn't exist
+    environment: ${{ parameters.url }}
+
+    strategy:
+      # default deployment strategy, more coming...
+      runOnce:
+        deploy:
+          steps:
+            - script: echo "Deploy ${{ parameters.solutionName }} as ${{ parameters.solutionType }} to ${{ parameters.url }}!"
