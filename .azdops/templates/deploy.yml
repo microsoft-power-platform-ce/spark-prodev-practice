@@ -1,6 +1,5 @@
 parameters:
   solutionName: ""
-  SolutionType: ""
   clientId: ""  
   clientSecret: ""
   tenantId: ""
@@ -20,4 +19,9 @@ jobs:
       runOnce:
         deploy:
           steps:
-            - script: echo "Deploy ${{ parameters.solutionName }} as ${{ parameters.solutionType }} to ${{ parameters.url }}!"
+
+            - pwsh: ./pwsh/Install-Pac.ps1 $(agent.OS) $(agent.TempDirectory) "azdops"
+
+            - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
+
+            - script: pac solution import -p $(Pipeline.workspace)/solution-artifact/${{ parameters.solutionName }}.zip -a

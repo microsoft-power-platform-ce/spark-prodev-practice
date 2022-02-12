@@ -12,5 +12,15 @@ jobs:
     pool:
       vmImage: "ubuntu-latest"
     steps:
-      - script: echo "Build ${{ parameters.solutionName }} as ${{ parameters.solutionType }}""
-    
+      
+      - pwsh: ./pwsh/Install-Pac.ps1 $(agent.OS) $(agent.TempDirectory) "azdops"
+
+      # Bild .NET
+      # Build PCF
+      # Tranpile / bundle TS/JS
+
+      - script: pac solution pack -f solutions/${{ parameters.solutionName }}/src/ -z $(Pipeline.Workspace)/solution-artifact/${{ parameters.solutionName }}.zip -p ${{ parameters.solutionType }}
+      
+      - publish: $(Pipeline.Workspace)/solution-artifact
+        artifact: solution-artifact
+                

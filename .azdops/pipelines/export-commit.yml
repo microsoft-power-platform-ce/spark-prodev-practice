@@ -1,0 +1,11 @@
+trigger: none
+
+jobs: 
+ - template: ../templates/export-commit.yml
+   parameters:
+    solutionName: "admin"
+    solutionType: "Both"
+    clientId: $(clientId)  
+    clientSecret: $(clientSecret)
+    tenantId: $(tenantId)
+    url: $(url)
