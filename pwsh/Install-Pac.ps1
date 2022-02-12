@@ -3,12 +3,7 @@ if (Get-Command pac -ErrorAction Ignore)
   exit
 }
 
-if ([string]::IsNullOrEmpty($GITHUB_PATH))
-{
-  $platform = "azdops"
-} else {
-  $platform = "github"
-}
+$platform = & $PSScriptRoot/Get-Platform.ps1
 
 switch($platform) {
   "azdops" {
@@ -68,18 +63,7 @@ Write-Host "disabling telemetry"
 Invoke-Expression "$destinationFolder/pac/pac telemetry disable"
 
 Write-Host "Prepending pac folder to system path"
-switch ($platform) {
-  "azdops" {
-    Write-Host "##vso[task.prependpath]$destinationFolder/pac"
-  }
-  "github" {
-    Write-Output "$destinationFolder/pac" |
-      Out-File `
-        -FilePath $env:GITHUB_PATH `
-        -Encoding utf8 `
-        -Append
-  }
-}
+& $PSScriptRoot/Add-Path.ps1 "$destinationFolder/pac"
 
 Set-Alias `
   -Name pac `
