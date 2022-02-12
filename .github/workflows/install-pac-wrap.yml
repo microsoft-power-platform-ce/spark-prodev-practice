@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install pac-wrap
         run: |
-          ./pwsh/Install-PacWrap.ps1
+          ./pwsh/lib/Install-PacWrap.ps1
           pac help
         shell: pwsh
       - run: pac help

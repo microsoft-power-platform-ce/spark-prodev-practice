@@ -14,7 +14,7 @@ param(
   [string]$TenantId
 )
 
-& $PSScriptRoot/Create-AuthProfile.ps1 `
+& $PSScriptRoot/lib/Create-AuthProfile.ps1 `
   -Url $Url `
   -ClientId $ClientId `
   -ClientSecret $ClientSecret `
@@ -26,13 +26,13 @@ switch($PackageType)
     1..2 | ForEach-Object -Parallel {
       switch ($_) {
         1 {
-          & $PSScriptRoot/Export-Managed.ps1 `
+          & $using:PSScriptRoot/lib/Export-Managed.ps1 `
             -PackageType $using:PackageType `
             -Path $using:Path `
             -Name $using:Name
         }
         2 {
-          & $PSScriptRoot/Export-Unmanaged.ps1 `
+          & $using:PSScriptRoot/lib/Export-Unmanaged.ps1 `
             -Path $using:Path `
             -Name $using:Name
         }
@@ -40,13 +40,13 @@ switch($PackageType)
     }
   }
   "Managed" {
-    & $PSScriptRoot/Export-Managed.ps1 `
+    & $PSScriptRoot/lib/Export-Managed.ps1 `
       -PackageType $PackageType `
       -Path $Path `
       -Name $Name
   }
   "Unmanaged" {
-    & $PSScriptRoot/Export-Unmanaged.ps1 `
+    & $PSScriptRoot/lib/Export-Unmanaged.ps1 `
       -Path $Path `
       -Name $Name
   }
