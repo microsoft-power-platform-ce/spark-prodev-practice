@@ -1,4 +1,4 @@
-$platform = & $PSScriptRoot/Get-Platform/ps1
+$platform = & $PSScriptRoot/Get-Platform.ps1
 switch($platform) {
   "azdops" {
     Write-Output "$env:BUILD_ARTIFACTSTAGINGDIRECTORY"
