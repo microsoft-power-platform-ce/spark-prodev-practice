@@ -1,6 +1,6 @@
 param(
   $Name,
-  $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactPath.ps1)/$Name.zip",
+  $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactStagingPath.ps1)/$Name.zip",
   $Folder = "solutions/$Name/src",
   $PackageType = "Both"
 )

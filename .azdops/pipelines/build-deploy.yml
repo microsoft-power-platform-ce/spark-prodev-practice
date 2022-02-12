@@ -9,24 +9,7 @@ stages:
   - template: ../templates/build.yml
     parameters:
       solutionName: admin
-#   - template: ../templates/deploy.yml
-#     parameters:
-#       solutionName: admin
-#       environment: Prod
-# jobs:
-#   - template: ../templates/build.yml
-#     parameters:
-#       solutionName: ${{ variables.solutionName }}
-#       solutionType: ${{ variables.solutionType }}
-#       clientId: $(clientId)
-#       clientSecret: $(clientSecret)
-#       tenantId: $(tenantId)
-#       url: $(url)
-#   - template: ../templates/deploy.yml
-#     parameters:
-#       solutionName: ${{ variables.solutionName }}
-#       solutionType: ${{ variables.solutionType }}
-#       clientId: $(clientId)
-#       clientSecret: $(clientSecret)
-#       tenantId: $(tenantId)
-#       url: $(url)
+  - template: ../templates/deploy.yml
+    parameters:
+      solutionName: admin
+      environment: Prod
