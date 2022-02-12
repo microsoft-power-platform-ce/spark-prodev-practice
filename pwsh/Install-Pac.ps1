@@ -83,4 +83,5 @@ switch ($platform) {
 
 Set-Alias `
   -Name pac `
-  -Value "$destinationFolder/pac/pac"
+  -Value "$destinationFolder/pac/pac" `
+  -Scope Script
