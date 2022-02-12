@@ -1,1 +1,23 @@
-parameters: 
+trigger: none
+
+variables:
+  solutionName: "admin"
+  solutionType: "Both"
+
+jobs: 
+ - template: ../templates/build.yml
+   parameters:
+    solutionName: ${{ variables.solutionName }}
+    solutionType: ${{ variables.solutionType }}
+    clientId: $(clientId)  
+    clientSecret: $(clientSecret)
+    tenantId: $(tenantId)
+    url: $(url)
+ - template: ../templates/deploy.yml
+   parameters:
+    solutionName: ${{ variables.solutionName }}
+    solutionType: ${{ variables.solutionType }}
+    clientId: $(clientId)  
+    clientSecret: $(clientSecret)
+    tenantId: $(tenantId)
+    url: $(url)

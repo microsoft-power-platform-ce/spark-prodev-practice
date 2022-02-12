@@ -1,0 +1,8 @@
+<botcomponent schemaname="new_customtype_6524fcab62aa4c61b602b5cc3182cefe">
+  <componenttype>3</componenttype>
+  <description>Account number input from user to match regular expression. 4 digits and on Alphabet character. </description>
+  <iscustomizable>1</iscustomizable>
+  <name>Account Number</name>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

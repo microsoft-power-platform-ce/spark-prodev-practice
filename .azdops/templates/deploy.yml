@@ -1,1 +1,27 @@
 parameters:
+  solutionName: ""
+  clientId: ""  
+  clientSecret: ""
+  tenantId: ""
+  url: ""
+
+jobs:
+  - deployment: Deploy_PowerPlatform_Solution
+    displayName: Deploy Power Platform Solution (${{ parameters.solutionName }})
+    pool:
+      vmImage: "ubuntu-latest"
+
+    # creates an environment if it doesn't exist
+    environment: "SPARK"
+
+    strategy:
+      # default deployment strategy, more coming...
+      runOnce:
+        deploy:
+          steps:
+
+            - pwsh: ./pwsh/Install-Pac.ps1 $(agent.OS) $(agent.TempDirectory) "azdops"
+
+            - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
+
+            - script: pac solution import -p $(Pipeline.workspace)/solution-artifact/${{ parameters.solutionName }}.zip -a

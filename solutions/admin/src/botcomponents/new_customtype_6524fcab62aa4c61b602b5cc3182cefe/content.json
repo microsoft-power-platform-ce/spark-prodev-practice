@@ -1,0 +1,15 @@
+{
+  "regexTypes": [
+    {
+      "regExPattern": "[0-9]{4}[a-zA-Z]",
+      "customTypeSchema": "RegexPattern",
+      "id": "new_customtype_6524fcab62aa4c61b602b5cc3182cefe",
+      "displayName": "Account Number",
+      "description": "Account number input from user to match regular expression. 4 digits and on Alphabet character. ",
+      "createdTime": "2021-12-16T14:30:11.685729Z",
+      "updatedTime": "2021-12-16T21:23:31.2197844Z",
+      "createdUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    }
+  ]
+}
