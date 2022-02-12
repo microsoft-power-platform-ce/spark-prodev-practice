@@ -1,7 +1,7 @@
 trigger: none
 
 jobs:
-  - job: pac-help
+  - job: pac_help
     pool:
       vmImage: ubuntu-latest
     steps:
