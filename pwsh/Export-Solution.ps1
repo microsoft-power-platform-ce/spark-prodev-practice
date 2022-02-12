@@ -56,3 +56,9 @@ switch($PackageType)
   "Managed" { Export-Managed }
   "Unmanaged" { Export-Unmanaged }
 }
+
+pac solution unpack `
+  --zipfile $Path `
+  --folder $Folder `
+  --packagetype $PackageType `
+  --allowDelete
