@@ -15,7 +15,7 @@ jobs:
       - checkout: self
         persistCredentials: true
 
-      - pwsh: ./pwsh/Install-Pac.ps1
+      - pwsh: ./pwsh/Install-Pac.ps1 $(agent.OS) $(agent.TempDirectory) "azdops"
 
       - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
       
