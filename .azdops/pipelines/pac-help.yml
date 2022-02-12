@@ -1,0 +1,11 @@
+trigger: none
+
+jobs:
+  - job: pac-help
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - pwsh: |
+          ./pwsh/Install-Pac.ps1
+          pac help
+      - script: pac help
