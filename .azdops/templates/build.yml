@@ -19,6 +19,7 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)
             artifact: solution-artifact
       - job: pack_pwsh
+        displayName: Pack pwsh
         pool:
           vmImage: ubuntu-latest
         steps:
