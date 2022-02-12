@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InteractionCentricDashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Test" languagecode="1033" />
+  </LocalizedNames>
+  <FormId>{546b3b1e-6b75-ec11-8943-00224809eca7}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="interactioncentricdashboard">
+      <form>
+        <tabs filterby="createdon" timeframe="2" primaryentitylogicalname="account" entityview="{65FFAF9A-E8C5-432D-860B-32F841B00D87}" dashboardCategory="1_1" tilespresent="false">
+          <tab showlabel="true" verticallayout="true" collapsible="true" id="{7400e796-d296-40a2-8454-09c2c42a1539}">
+            <labels>
+              <label description="Visual Filters" languagecode="1033" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section name="VisualFilters" showlabel="false" showbar="false" columns="1111" id="{c155a3c1-5727-4c65-ad89-a03002e35485}">
+                    <labels>
+                      <label description="Section" languagecode="1033" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="1" rowspan="12" showlabel="false" ischartcell="true" id="{9dd6bb7d-74ae-40f2-a56b-b1f27a8c9483}" auto="false">
+                          <labels>
+                            <label description="Account" languagecode="1033" />
+                          </labels>
+                          <control id="Componentf85b062" uniqueid="{97cb820b-8be6-c637-2441-c1a4716cc657}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>account</TargetEntityType>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>10</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{65FFAF9A-E8C5-432D-860B-32F841B00D87}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{A3A9EE47-5093-DE11-97D4-00155DA3B01E}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" ispreviewcell="true" ischartcell="true" id="{07e0a7c3-f254-4180-b853-1c2becff9429}">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" ispreviewcell="true" ischartcell="true" id="{2138db20-e903-4733-9a8f-af51e923adb4}">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" ispreviewcell="true" ischartcell="true" id="{71bf8811-a849-40d6-af80-fa0cb6bdcf42}">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+          <tab name="StreamsContainer" showlabel="true" verticallayout="true" collapsible="false" id="{662028b4-12c2-4ebe-b909-d9825968f2a3}">
+            <labels>
+              <label description="Streams" languagecode="1033" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section name="Streams" showlabel="false" showbar="false" columns="1111" id="{ce54880c-7ee0-41ea-aa81-5c89bcad7c07}">
+                    <labels>
+                      <label description="Section" languagecode="1033" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="4" rowspan="12" showlabel="false" isstreamcell="true" id="{1e922bf5-6f05-46be-a2db-07d9aca8d94b}">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                          <control id="Component{5cb6aa05-88b8-a2ce-dc68-1b810c20c5ce}" classid="{EE9078C8-6946-4E2C-B8F8-35E65F4BE6A8}">
+                            <parameters>
+                              <StreamObjects>
+                                <ShowAsTiles>false</ShowAsTiles>
+                                <StreamObject id="{95d8b42e-3275-e338-73e2-6c52dca5e57e}" type="1">
+                                  <LogicalEntityName>account</LogicalEntityName>
+                                  <EntityViewId>{65ffaf9a-e8c5-432d-860b-32f841b00d87}</EntityViewId>
+                                </StreamObject>
+                              </StreamObjects>
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.0.3</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</InteractionCentricDashboard>

@@ -1,0 +1,315 @@
+{
+  "intents": [
+    {
+      "endUserOverrideName": "Account Information",
+      "triggerQueries": [
+        "Account",
+        "[Aa]ccount information",
+        "[Aa]ccount"
+      ],
+      "dialogId": "new_topic_74f7303def284d5bad1cbf3edf322357",
+      "isTriggeringEnabled": true,
+      "id": "new_topic_74f7303def284d5bad1cbf3edf322357",
+      "displayName": "Account-Info",
+      "description": "",
+      "createdTime": "2021-12-16T14:32:36.484638Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    }
+  ],
+  "namedEntities": [
+    {
+      "id": "242133ad-bcb1-49a9-b8f3-414d3f7144f2",
+      "displayName": "Yes"
+    },
+    {
+      "id": "2f60b855-4a82-4896-b1df-fca12cd385c4",
+      "displayName": "No"
+    }
+  ],
+  "dialogs": [
+    {
+      "rootNodeId": "1dbd01f3-6ea4-47df-a4f1-d481d27441a4",
+      "messageNodes": [
+        {
+          "botMessageId": "d7e7a510-7c3f-41fd-ab25-3a33e58e5918",
+          "nodeType": "BotMessageNode",
+          "id": "1dbd01f3-6ea4-47df-a4f1-d481d27441a4",
+          "defaultTargetNodeId": "62120377-1e8a-47ea-bb17-3c1a8da7faae"
+        },
+        {
+          "botMessageId": "32e749a3-ef56-4b86-884c-382cc709c396",
+          "nodeType": "BotMessageNode",
+          "id": "72664b9c-97a1-4f63-8806-6fe542d4cc14",
+          "defaultTargetNodeId": "e90dc4d1-e937-4d97-8a02-71fbc3a3e4a0"
+        }
+      ],
+      "actionNodes": [
+        {
+          "contextVariableId": "05f524c7-be31-4120-934f-d18c3e92dc3b",
+          "nodeType": "ActionNode",
+          "inputParameterVariableIdMap": {
+            "text": "{8a0c1956-c79e-4321-b076-daa67f5d086b}"
+          },
+          "outputExpressionVariableIds": [
+            "1e341f7a-dce2-4ca0-8fa1-c193a0a847cb",
+            "5787a219-c4eb-413d-91f6-12579202e558"
+          ],
+          "id": "b7f7a6cd-ffc0-499a-b4e5-ec4dc5e18934",
+          "defaultTargetNodeId": "72664b9c-97a1-4f63-8806-6fe542d4cc14"
+        }
+      ],
+      "dialogChangeNodes": [
+        {
+          "targetDialogId": "new_topic_1cf55fa721a3447bbd153ef47dffce1a_8a4964498f83424bb3a86295bf7d0952_startover",
+          "nodeType": "DialogChangeNode",
+          "id": "05f4c637-332f-41a3-9d72-80c707f19fe9"
+        },
+        {
+          "targetDialogId": "new_topic_1cf55fa721a3447bbd153ef47dffce1a_3d2584ec30914684839527e05e7be172_thankyou",
+          "nodeType": "DialogChangeNode",
+          "id": "e90dc4d1-e937-4d97-8a02-71fbc3a3e4a0"
+        }
+      ],
+      "questionNodes": [
+        {
+          "contextVariableId": "04df3f0a-3c7b-45b3-a625-7625182d06e8",
+          "nodeType": "QuestionNode",
+          "id": "62120377-1e8a-47ea-bb17-3c1a8da7faae",
+          "routes": [
+            {
+              "expression": "@equals(parameters('04df3f0a-3c7b-45b3-a625-7625182d06e8'), '242133ad-bcb1-49a9-b8f3-414d3f7144f2')",
+              "targetNodeId": "e8c61f83-801a-476d-970e-2ef11de849da"
+            },
+            {
+              "expression": "@equals(parameters('04df3f0a-3c7b-45b3-a625-7625182d06e8'), '2f60b855-4a82-4896-b1df-fca12cd385c4')",
+              "targetNodeId": "05f4c637-332f-41a3-9d72-80c707f19fe9"
+            }
+          ],
+          "defaultTargetNodeId": "62120377-1e8a-47ea-bb17-3c1a8da7faae"
+        },
+        {
+          "contextVariableId": "8a0c1956-c79e-4321-b076-daa67f5d086b",
+          "nodeType": "QuestionNode",
+          "id": "e8c61f83-801a-476d-970e-2ef11de849da",
+          "defaultTargetNodeId": "b7f7a6cd-ffc0-499a-b4e5-ec4dc5e18934"
+        }
+      ],
+      "id": "new_topic_74f7303def284d5bad1cbf3edf322357",
+      "displayName": "Dialog for Account-Info",
+      "createdTime": "2021-12-16T14:32:36.484638Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    }
+  ],
+  "botMessages": [
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Would you like more information on your account?"
+        }
+      },
+      "id": "308d5f90-09e6-479b-922e-5480c3006013",
+      "createdTime": "2021-12-16T14:33:13.673Z",
+      "updatedTime": "2021-12-16T14:33:13.673Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "What is your account number?"
+        }
+      },
+      "id": "d7e59499-7091-4872-b6de-d231d27da792",
+      "createdTime": "2021-12-16T14:54:11.903Z",
+      "updatedTime": "2021-12-16T14:54:11.903Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Thank you for the question regarding your account. Process..."
+        }
+      },
+      "id": "d7e7a510-7c3f-41fd-ab25-3a33e58e5918",
+      "createdTime": "2021-12-16T14:32:36.484638Z",
+      "updatedTime": "2021-12-16T14:32:36.484638Z",
+      "createdUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    },
+    {
+      "channelContent": {
+        "web": {
+          "contentFormat": "Markdown",
+          "content": "Account Name: {1e341f7a-dce2-4ca0-8fa1-c193a0a847cb}\n\nID: {8a0c1956-c79e-4321-b076-daa67f5d086b}"
+        }
+      },
+      "id": "32e749a3-ef56-4b86-884c-382cc709c396",
+      "createdTime": "2021-12-16T14:55:31.298Z",
+      "updatedTime": "2021-12-16T14:55:31.298Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "user-0"
+    }
+  ],
+  "actionDefinitions": [
+    {
+      "timeoutInSeconds": 60,
+      "retryCount": 1,
+      "method": 2,
+      "headers": {
+        "accept": "application/json"
+      },
+      "bodyContent": "{\"text\":\"{8a0c1956-c79e-4321-b076-daa67f5d086b}\"}",
+      "actionType": "Flow",
+      "flowMetadata": {
+        "id": "51ba2fd3-7f5e-ec11-8f8f-0022480a0583",
+        "uniqueId": "13909694-f549-43d7-ad0d-ea34a9b05456",
+        "title": "GetUserAccountInfo",
+        "description": "Call this flow from Power Virtual Agents.",
+        "httpMethod": 2,
+        "inputParameters": [
+          {
+            "name": "AccountNumber",
+            "id": "text",
+            "type": "String",
+            "optional": false
+          }
+        ],
+        "outputParameters": [
+          {
+            "name": "AccountName",
+            "id": "accountname",
+            "type": "String",
+            "optional": true
+          },
+          {
+            "name": "AccountID",
+            "id": "accountid",
+            "type": "String",
+            "optional": true
+          }
+        ],
+        "outputSchemaType": "Json",
+        "createdTime": "2021-12-16T14:52:44Z",
+        "isEnabled": true,
+        "lastModifiedTime": "2021-12-16T14:52:53Z",
+        "versionNumber": 933737
+      },
+      "id": "a4377486-221e-4538-beb6-90d7073418a0",
+      "displayName": "GetUserAccountInfo",
+      "description": "Call this flow from Power Virtual Agents.",
+      "createdTime": "2021-12-16T14:54:48.871Z",
+      "updatedTime": "2021-12-16T14:54:48.871Z"
+    }
+  ],
+  "contextVariables": [
+    {
+      "systemType": "String",
+      "initializerType": "UserQuestion",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": true,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "namedEntityOptions": [
+        "242133ad-bcb1-49a9-b8f3-414d3f7144f2",
+        "2f60b855-4a82-4896-b1df-fca12cd385c4"
+      ],
+      "messages": {
+        "GetValue": [
+          "308d5f90-09e6-479b-922e-5480c3006013"
+        ]
+      },
+      "isGlobal": false,
+      "id": "04df3f0a-3c7b-45b3-a625-7625182d06e8",
+      "displayName": "response",
+      "createdTime": "2021-12-16T14:33:13.673Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    },
+    {
+      "customTypeId": "new_customtype_6524fcab62aa4c61b602b5cc3182cefe",
+      "initializerType": "UserQuestion",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": true,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "messages": {
+        "GetValue": [
+          "d7e59499-7091-4872-b6de-d231d27da792"
+        ]
+      },
+      "isGlobal": false,
+      "id": "8a0c1956-c79e-4321-b076-daa67f5d086b",
+      "displayName": "AccountNumber",
+      "createdTime": "2021-12-16T14:54:11.904Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    },
+    {
+      "customTypeId": "989c5735-bae6-48c0-bd6a-30726cf97a71",
+      "initializerType": "Action",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "actionId": "a4377486-221e-4538-beb6-90d7073418a0",
+      "isGlobal": false,
+      "id": "05f524c7-be31-4120-934f-d18c3e92dc3b",
+      "displayName": "",
+      "createdTime": "2021-12-16T14:54:48.871Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    },
+    {
+      "systemType": "String",
+      "initializerType": "Expression",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "expression": "@parameters('05f524c7-be31-4120-934f-d18c3e92dc3b')['accountname']",
+      "isGlobal": false,
+      "id": "1e341f7a-dce2-4ca0-8fa1-c193a0a847cb",
+      "displayName": "AccountName",
+      "createdTime": "2021-12-16T14:54:48.871Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    },
+    {
+      "systemType": "String",
+      "initializerType": "Expression",
+      "scope": "Dialog",
+      "greedySlotFillingEnabled": false,
+      "isInput": false,
+      "externalInitializationAllowed": false,
+      "expression": "@parameters('05f524c7-be31-4120-934f-d18c3e92dc3b')['accountid']",
+      "isGlobal": false,
+      "id": "5787a219-c4eb-413d-91f6-12579202e558",
+      "displayName": "AccountID",
+      "createdTime": "2021-12-16T14:54:48.871Z",
+      "updatedTime": "2021-12-16T14:58:13.7732264Z",
+      "createdUserId": "user-0",
+      "updatedUserId": "f34433bb-4e6d-4519-bcb1-49260ae93d8b"
+    }
+  ],
+  "jsonTypes": [
+    {
+      "customTypeSchema": "Json",
+      "id": "989c5735-bae6-48c0-bd6a-30726cf97a71",
+      "displayName": "Response Json Type for Flow - GetUserAccountInfo",
+      "createdTime": "2021-12-16T14:54:48.871Z",
+      "updatedTime": "2021-12-16T14:54:48.871Z"
+    }
+  ]
+}

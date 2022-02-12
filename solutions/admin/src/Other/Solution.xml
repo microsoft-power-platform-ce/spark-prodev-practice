@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.22012.140" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>Admin</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Admin" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Upgrade of Admin" languagecode="1033" />
+    </Descriptions>
+    <Version>1.1.0.1</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>Cr90c73</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="CDS Default Publisher" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>crc8e</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>66783</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="2" />
+      <RootComponent type="1" schemaName="activitypointer" behavior="2" />
+      <RootComponent type="1" schemaName="contact" behavior="2" />
+      <RootComponent type="29" id="{17335ff7-a974-ec11-8943-00224809eca7}" behavior="0" />
+      <RootComponent type="29" id="{51ba2fd3-7f5e-ec11-8f8f-0022480a0583}" behavior="0" />
+      <RootComponent type="29" id="{bb3a2c6f-605f-ec11-8f8f-0022480a0236}" behavior="0" />
+      <RootComponent type="29" id="{eaf770da-ad74-ec11-8943-00224809e50c}" behavior="0" />
+      <RootComponent type="60" id="{3e88da06-4d88-ec11-93b0-000d3a351bb2}" />
+      <RootComponent type="60" id="{546b3b1e-6b75-ec11-8943-00224809eca7}" />
+      <RootComponent type="61" schemaName="crc8e_getContentWindow.js" behavior="0" />
+      <RootComponent type="62" schemaName="crc8e_AdminApp" behavior="0" />
+      <RootComponent type="62" schemaName="crc8e_AdminDashboardTest" behavior="0" />
+      <RootComponent type="80" schemaName="crc8e_AdminApp" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="26" schemaName="All Accounts" displayName="All Accounts" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
+          <package>msdynce_AppCommonAnchor (9.0.21122.10002)</package>
+        </Required>
+        <Dependent type="60" displayName="Test" parentDisplayName="Account" id="{546b3b1e-6b75-ec11-8943-00224809eca7}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}">
+          <package>msdynce_AppCommonAnchor (9.0.21122.10002)</package>
+        </Required>
+        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
+          <package>msdynce_AppCommonAnchor (9.0.21122.10002)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}">
+          <package>msdynce_AppCommonAnchor (9.0.21122.10002)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent type="80" schemaName="crc8e_AdminApp" displayName="Admin App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2112.4017)" />
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

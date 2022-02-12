@@ -1,0 +1,8 @@
+<bot schemaname="new_bot_1cf55fa721a3447bbd153ef47dffce1a">
+  <authenticationmode>1</authenticationmode>
+  <authenticationtrigger>0</authenticationtrigger>
+  <iscustomizable>1</iscustomizable>
+  <language>1033</language>
+  <name>Workshop Chatbot</name>
+  <timezoneruleversionnumber>4</timezoneruleversionnumber>
+</bot>

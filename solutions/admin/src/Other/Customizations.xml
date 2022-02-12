@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <InteractionCentricDashboards />
+  <WebResources />
+  <CustomControls />
+  <AppModuleSiteMaps />
+  <AppModules />
+  <EntityDataProviders />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="crc8e_sharedcommondataserviceforapps_15fd2">
+      <connectionreferencedisplayname>Microsoft Dataverse Admin-15fd2</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="crc8e_sharedvisualstudioteamservices_5360c">
+      <connectionreferencedisplayname>Azure DevOps Admin-5360c</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_visualstudioteamservices</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="crc8e_sharedvisualstudioteamservices_b2696">
+      <connectionreferencedisplayname>Azure DevOps Admin-b2696</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_visualstudioteamservices</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="new_sharedcommondataserviceforapps_392c4">
+      <connectionreferencedisplayname>Microsoft Dataverse Default-392c4</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

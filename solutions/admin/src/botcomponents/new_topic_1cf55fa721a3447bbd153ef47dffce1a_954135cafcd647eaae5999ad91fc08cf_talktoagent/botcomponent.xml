@@ -1,0 +1,8 @@
+<botcomponent schemaname="new_topic_1cf55fa721a3447bbd153ef47dffce1a_954135cafcd647eaae5999ad91fc08cf_talktoagent">
+  <componenttype>0</componenttype>
+  <description>System Intent Escalate</description>
+  <iscustomizable>1</iscustomizable>
+  <name>Escalate</name>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
