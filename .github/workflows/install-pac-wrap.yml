@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install pac-wrap
-        run: ./pwsh/Install-PacWrap.ps1
+        run: |
+          ./pwsh/Install-PacWrap.ps1
+          pac help
         shell: pwsh
-      - run: pac-wrap help
+      - run: pac help
