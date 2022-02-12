@@ -1,1 +1,41 @@
 parameters:
+  solutionName: ""
+  solutionType: "Both"
+  clientId: ""  
+  clientSecret: ""
+  tenantId: ""
+  url: ""
+
+jobs: 
+  - job:
+    pool: 
+      vmImage: ubuntu-latest
+    steps:
+
+      - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
+      
+      - script: |
+          pac solution export  -p $(Pipeline.Workspace)/solutions/ -n admin -a & 
+          pac solution export  -p $(Pipeline.Workspace)/solutions/managed -n admin -a -m &
+          wait 
+          mv $(Pipeline.Workspace)/solutions/managed/${{ parameters.solutionName }}.zip $(Pipeline.Workspace)/solutions/${{ parameters.solutionName }}_managed.zip
+
+      - checkout: self
+        persistCredentials: true
+
+      # Reattach to branch (variable)
+      # Configure user.name and user.email
+      - script: |
+          git checkout ("$(Build.SourceBranch)" -replace "^refs/heads/", "")
+          git config user.name "Automated Pipeline Commit on behalf of $(Build.QueuedBy)"
+          git config user.email "PPALM-ALM-Build-Account"
+        displayName: "Checkout branch and config user"
+
+      - script: pac solution unpack -p ${{ parameters.solutionType }} -z $(Pipeline.Workspace)/solutions/${{ parameters.solutionName }}.zip -f $(Build.SourcesDirectory)/solutions/${{ parameters.solutionName }}/src -ad
+
+      - script: |
+          git add .
+          git commit -m "Automated commit of ${{ parameters.SolutionName }} solution from ${{ parameters.targetEnvironment }} of type Both"
+          git push
+
+      - publish: $(Build.SourcesDirectory)/solutions

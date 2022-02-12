@@ -1,1 +1,16 @@
 parameters:
+  solutionName: ""
+  SolutionType: ""
+  clientId: ""  
+  clientSecret: ""
+  tenantId: ""
+  url: ""
+
+jobs:
+  - job: build_${{ parameters.solutionName }}_as_${{ parameters.solutionType }}
+    displayName: Build ${{ parameters.solutionName }} as ${{ parameters.solutionType }}
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - script: echo "Build ${{ parameters.solutionName }} as ${{ parameters.solutionType }}""
+    
