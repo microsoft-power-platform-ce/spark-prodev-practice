@@ -1,26 +1,17 @@
 parameters:
   solutionName: ""
-  SolutionType: ""
-  clientId: ""  
-  clientSecret: ""
-  tenantId: ""
-  url: ""
 
 jobs:
-  - job: build_${{ parameters.solutionName }}_as_${{ parameters.solutionType }}
-    displayName: Build ${{ parameters.solutionName }} as ${{ parameters.solutionType }}
+  - job: build_${{ parameters.solutionName }}
+    displayName: Build ${{ parameters.solutionName }}
     pool:
-      vmImage: "ubuntu-latest"
+      vmImage: ubuntu-latest
     steps:
-      
-      - pwsh: ./pwsh/Install-Pac.ps1 $(agent.OS) $(agent.TempDirectory) "azdops"
-
-      # Bild .NET
+      # Build .NET
       # Build PCF
-      # Tranpile / bundle TS/JS
-
-      - script: pac solution pack -f solutions/${{ parameters.solutionName }}/src/ -z $(Pipeline.Workspace)/solution-artifact/${{ parameters.solutionName }}.zip -p ${{ parameters.solutionType }}
-      
-      - publish: $(Pipeline.Workspace)/solution-artifact
+      # Transpile / bundle TS/JS
+      - pwsh: |
+          ./pwsh/Compress-Solution.ps1 `
+            -Name ${{ parameters.solutionName }}
+      - publish: $(Build.ArtifactStagingDirectory)
         artifact: solution-artifact
-                
