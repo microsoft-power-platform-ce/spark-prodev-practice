@@ -4,7 +4,7 @@ if (Get-Command pac -ErrorAction Ignore)
 }
 
 $platform = & $PSScriptRoot/Get-Platform.ps1
-
+Write-Host "Platform: $platform"
 switch($platform) {
   "azdops" {
     $destinationFolder = $env:AGENT_TEMPDIRECTORY
