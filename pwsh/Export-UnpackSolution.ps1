@@ -20,41 +20,36 @@ param(
   -ClientSecret $ClientSecret `
   -TenantId $TenantId
 
-function Export-Managed
-{
-  pac solution export `
-    --path (
-        if ($PackageType -eq "Both") {
-          ($Path -Replace "\.zip$", "_managed.zip")
-        } else {
-          $Path
-        }
-      ) `
-    --name $Name `
-    --managed `
-    --async
-}
-
-function Export-Unmanaged
-{
-  pac solution export `
-    --path $Path `
-    --name $Name `
-    --async
-}
-
 switch($PackageType)
 {
   "Both" {
     1..2 | ForEach-Object -Parallel {
       switch ($_) {
-        1 { Export-Managed }
-        2 { Export-Unmanaged }
+        1 {
+          & $PSScriptRoot/Export-Managed.ps1 `
+            -PackageType $using:PackageType `
+            -Path $using:Path `
+            -Name $using:Name
+        }
+        2 {
+          & $PSScriptRoot/Export-Unmanaged.ps1 `
+            -Path $using:Path `
+            -Name $using:Name
+        }
       }
     }
   }
-  "Managed" { Export-Managed }
-  "Unmanaged" { Export-Unmanaged }
+  "Managed" {
+    & $PSScriptRoot/Export-Managed.ps1 `
+      -PackageType $PackageType `
+      -Path $Path `
+      -Name $Name
+  }
+  "Unmanaged" {
+    & $PSScriptRoot/Export-Unmanaged.ps1 `
+      -Path $Path `
+      -Name $Name
+  }
 }
 
 pac solution unpack `
