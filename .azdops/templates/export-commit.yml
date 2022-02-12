@@ -7,12 +7,12 @@ parameters:
   url: ""
 
 jobs: 
-  - job:
+  - job: Export_${{ parameters.solutionName }}_as_${{ parameters.solutionType }}
     pool: 
       vmImage: ubuntu-latest
     steps:
 
-      - pwsh: ./pwsh/install-pac.ps1 
+      - pwsh: & ./pwsh/install-pac.ps1 
 
       - script: pac auth create -n dev -u ${{ parameters.url }} -id ${{ parameters.clientId }} -cs ${{ parameters.clientSecret }} -t ${{ parameters.tenantId }}
       
