@@ -15,5 +15,6 @@ stages:
           - pwsh: |
               ./pwsh/Compress-Solution.ps1 `
                 -Name ${{ parameters.solutionName }}
+            displayName: Pack Solution
           - publish: $(Build.ArtifactStagingDirectory)
             artifact: solution-artifact
