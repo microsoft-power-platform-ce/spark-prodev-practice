@@ -2,7 +2,7 @@ param(
   [Parameter(Mandatory=$true)]
   [string]$Name,
   [string]$Path = "./$Name.zip",
-  [string]$Folder = "solutions/$Name/src"
+  [string]$Folder = "solutions/$Name/src",
   [string]$PackageType = "Both",
   [Parameter(Mandatory=$true)]
   [string]$Url,
