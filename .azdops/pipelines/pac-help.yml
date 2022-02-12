@@ -6,6 +6,6 @@ jobs:
       vmImage: ubuntu-latest
     steps:
       - pwsh: |
-          ./pwsh/Install-PacWrap.ps1
+          ./pwsh/Install-Pac.ps1
           pac help
       - script: pac help
