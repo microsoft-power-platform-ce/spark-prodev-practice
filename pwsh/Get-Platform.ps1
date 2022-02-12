@@ -1,4 +1,4 @@
-if ([string]::IsNullOrEmpty($GITHUB_PATH))
+if ([string]::IsNullOrEmpty($env:GITHUB_PATH))
 {
   Write-Output "azdops"
 } else {

@@ -3,7 +3,7 @@ name: Install pac-wrap
 on:
   push:
     paths:
-      - pwsh/Install-PacWrap.ps1
+      - pwsh/*
       - .github/workflows/install-pac-wrap.yml
 
 jobs:
