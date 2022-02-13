@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          & ./pwsh/Export-UnpackSolution.ps1 `
+          ./pwsh/Export-UnpackSolution.ps1 `
             -Name admin `
             -Url ${{ secrets.URL }} `
             -ClientId ${{ secrets.CLIENT_ID }} `
