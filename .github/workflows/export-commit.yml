@@ -18,3 +18,4 @@ jobs:
             -TenantId ${{ secrets.TENANT_ID }}
         shell: pwsh
         name: Export / Unpack Solution
+      - uses: EndBug/add-and-commit@v8
