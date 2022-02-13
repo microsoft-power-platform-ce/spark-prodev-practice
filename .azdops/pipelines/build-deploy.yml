@@ -6,10 +6,49 @@ trigger:
       - solutions/admin/*
 
 stages:
-  - template: ../templates/build.yml
-    parameters:
-      solutionName: admin
-  - template: ../templates/deploy.yml
-    parameters:
-      solutionName: admin
-      environment: Prod
+  - stage: build
+    jobs:
+      - job: build_admin
+        displayName: Build admin
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          # Build .NET
+          # Build PCF
+          # Transpile / bundle TS/JS
+          - pwsh: |
+              ./pwsh/Compress-Solution.ps1 `
+                -Name admin
+            displayName: Pack Solution
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: solution-artifact
+      - job: pack_pwsh
+        displayName: Pack pwsh
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - publish: pwsh
+            artifact: pwsh
+  - stage: Prod
+    dependsOn: build
+    jobs:
+      - deployment: Deploy_PowerPlatform_Solutions
+        displayName: Deploy Power Platform Solution(s)
+        pool:
+          vmImage: ubuntu-latest
+        environment: Prod
+        variables:
+          - group: Credentials
+          - group: Prod
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - pwsh: |
+                    & $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
+                      -Name admin `
+                      -Url $(Url) `
+                      -ClientId $(ClientId) `
+                      -ClientSecret $(ClientSecret) `
+                      -TenantId $(TenantId)
+                  displayName: Import admin
