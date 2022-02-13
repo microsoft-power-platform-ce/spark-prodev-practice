@@ -1,7 +1,30 @@
 trigger: none
 
 jobs:
-  - template: ../templates/export-commit.yml
-    parameters:
-      solutionName: admin
-      environment: Dev
+  - job: export_commit_admin
+    pool:
+      vmImage: ubuntu-latest
+    variables:
+      - group: Credentials
+      - group: Dev
+    steps:
+      - checkout: self
+        persistCredentials: true
+      - pwsh: |
+          git checkout ("$(Build.SourceBranch)" -replace "^refs/heads/", "")
+          git config user.name "Automated Pipeline Commit on behalf of $(Build.QueuedBy)"
+          git config user.email "PPALM-ALM-Build-Account"
+        displayName: "Checkout branch and config user"
+      - pwsh: |
+          ./pwsh/Export-UnpackSolution.ps1 `
+            -Name admin `
+            -Url $(Url) `
+            -ClientId $(ClientId) `
+            -ClientSecret $(ClientSecret) `
+            -TenantId $(TenantId)
+        displayName: Export / Unpack Solution
+      - script: |
+          git add .
+          git commit -m "Automated commit of admin solution from Dev"
+          git push
+        displayName: Commit / Push
