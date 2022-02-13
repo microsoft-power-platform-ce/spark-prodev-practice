@@ -1,0 +1,31 @@
+on:
+  push:
+    paths:
+      - solutions/admin/**
+      - .github/workflows/build-deploy.yml
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-admin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          ./pwsh/Compress-Solution.ps1 `
+            -Name admin
+        shell: pwsh
+        name: pack-admin
+      - uses: actions/upload-artifact@v2
+        with:
+          name: solution-artifact
+          path: ${{ runner.temp }}/artifact
+  pack-pwsh:
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pwsh
+          path: pwsh
