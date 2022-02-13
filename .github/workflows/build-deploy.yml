@@ -10,6 +10,10 @@ on:
   workflow_dispatch:
 
 jobs:
+  build-admin-Plugins:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
   build-admin:
     runs-on: ubuntu-latest
     steps:

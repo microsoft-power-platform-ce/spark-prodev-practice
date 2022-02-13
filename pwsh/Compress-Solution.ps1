@@ -2,7 +2,7 @@ param(
   $Name,
   $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactStagingPath.ps1)/$Name.zip",
   $Folder = "solutions/$Name/src",
-  $MapPath = "solutions/$Name/map.xml"
+  $MapPath = "solutions/$Name/map.xml",
   $PackageType = "Both"
 )
 
