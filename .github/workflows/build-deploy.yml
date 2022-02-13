@@ -67,5 +67,9 @@ jobs:
       - name: Import admin
         run: |
           ./pwsh/Import-Solution.ps1 `
-            -Name admin
+            -Name admin `
+            -Url ${{ secrets.URL }} `
+            -ClientId ${{ secrets.CLIENT_ID }} `
+            -ClientSecret ${{ secrets.CLIENT_SECRET }} `
+            -TenantId ${{ secrets.TENANT_ID }}
         shell: pwsh
