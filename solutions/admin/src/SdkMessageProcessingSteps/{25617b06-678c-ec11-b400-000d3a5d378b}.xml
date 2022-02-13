@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Cr90c73.Admin.Plugins.AutoPopulateFoo: Create of contact" SdkMessageProcessingStepId="{25617b06-678c-ec11-b400-000d3a5d378b}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>Cr90c73.Admin.Plugins.AutoPopulateFoo, Cr90c73.Admin.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc5addba25892ac4</PluginTypeName>
+  <PluginTypeId>abd23e5d-f0e0-45f7-8c51-61effa896715</PluginTypeId>
+  <PrimaryEntity>contact</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Cr90c73.Admin.Plugins.AutoPopulateFoo: Create of contact</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>
