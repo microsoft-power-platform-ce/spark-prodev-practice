@@ -8,7 +8,17 @@ trigger:
 stages:
   - stage: build
     jobs:
+      - job: build_admin_Plugins
+        displayName: Build admin Plugins
+        pool:
+          vmImage: windows-latest
+        steps:
+          - task: NuGetCommand@2
+            inputs:
+              command: restore
+              restoreSolution: solutions/admin/Plugins/Plugins.sln
       - job: build_admin
+        dependsOn: build_admin_Plugins
         displayName: Build admin
         pool:
           vmImage: ubuntu-latest
@@ -29,26 +39,26 @@ stages:
         steps:
           - publish: pwsh
             artifact: pwsh
-  - stage: Prod
-    dependsOn: build
-    jobs:
-      - deployment: Deploy_PowerPlatform_Solutions
-        displayName: Deploy Power Platform Solution(s)
-        pool:
-          vmImage: ubuntu-latest
-        environment: Prod
-        variables:
-          - group: Credentials
-          - group: Prod
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - pwsh: |
-                    & $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
-                      -Name admin `
-                      -Url $(Url) `
-                      -ClientId $(ClientId) `
-                      -ClientSecret $(ClientSecret) `
-                      -TenantId $(TenantId)
-                  displayName: Import admin
+  # - stage: Prod
+  #   dependsOn: build
+  #   jobs:
+  #     - deployment: Deploy_PowerPlatform_Solutions
+  #       displayName: Deploy Power Platform Solution(s)
+  #       pool:
+  #         vmImage: ubuntu-latest
+  #       environment: Prod
+  #       variables:
+  #         - group: Credentials
+  #         - group: Prod
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - pwsh: |
+  #                   & $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
+  #                     -Name admin `
+  #                     -Url $(Url) `
+  #                     -ClientId $(ClientId) `
+  #                     -ClientSecret $(ClientSecret) `
+  #                     -TenantId $(TenantId)
+  #                 displayName: Import admin
