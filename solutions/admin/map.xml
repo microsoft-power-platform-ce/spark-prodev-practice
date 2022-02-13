@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Mapping>
-  <FileToFile map="Cr90c73AdminPlugins.dll" to="%PLUGINS_DIR%/Cr90c73AdminPlugins.dll" />
+  <FileToFile map="Cr90c73AdminPlugins.dll" to="%PLUGINS_DIR%/Cr90c73.Admin.Plugins.dll" />
 </Mapping>
