@@ -23,13 +23,23 @@ jobs:
         run: msbuild ./solutions/admin/Plugins/Plugins.sln `
           -verbosity:diagnostic `
           -property:Configuration=Release
+      - uses: actions/upload-artifact@v2
+        with:
+          name: admin-Plugins
+          path: ./solutions/admin/Plugins/bin/Release/Cr90c73.Admin.Plugins.dll
   build-admin:
+    needs: [build-admin-Plugins]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: admin-Plugins
       - run: |
           ./pwsh/Compress-Solution.ps1 `
             -Name admin
+        env:
+          PLUGINS_DIR: ${{ github.workspace }}/admin-Plugins
         shell: pwsh
         name: pack-admin
       - uses: actions/upload-artifact@v2
