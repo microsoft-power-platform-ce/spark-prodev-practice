@@ -22,7 +22,7 @@ stages:
             inputs:
               solution: solutions/admin/Plugins/Plugins.sln
               configuration: Release
-          - publish: solutions/admin/Plugins/bin/Release
+          - publish: solutions/admin/Plugins/bin/Release/Cr90c73.Admin.Plugins.dll
             artifact: admin_Plugins
       - job: build_admin
         dependsOn: build_admin_Plugins
@@ -39,13 +39,13 @@ stages:
             displayName: Pack Solution
           - publish: $(Build.ArtifactStagingDirectory)
             artifact: solution-artifact
-      - job: pack_pwsh
-        displayName: Pack pwsh
-        pool:
-          vmImage: ubuntu-latest
-        steps:
-          - publish: pwsh
-            artifact: pwsh
+      # - job: pack_pwsh
+      #   displayName: Pack pwsh
+      #   pool:
+      #     vmImage: ubuntu-latest
+      #   steps:
+      #     - publish: pwsh
+      #       artifact: pwsh
   # - stage: Prod
   #   dependsOn: build
   #   jobs:
