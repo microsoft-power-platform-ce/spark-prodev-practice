@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>crc8e_AdminDashboardTest</UniqueName>
+  <IntroducedVersion>1.0.0.3</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="60" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+    <AppModuleComponent type="29" id="{eaf770da-ad74-ec11-8943-00224809e50c}" />
+    <AppModuleComponent type="29" id="{17335ff7-a974-ec11-8943-00224809eca7}" />
+    <AppModuleComponent type="60" id="{546b3b1e-6b75-ec11-8943-00224809eca7}" />
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="60" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+    <AppModuleComponent type="29" id="{bb3a2c6f-605f-ec11-8f8f-0022480a0236}" />
+    <AppModuleComponent type="29" id="{51ba2fd3-7f5e-ec11-8f8f-0022480a0583}" />
+    <AppModuleComponent type="62" schemaName="crc8e_AdminDashboardTest" />
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="contact" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Admin - Dashboard Test" languagecode="1033" />
+  </LocalizedNames>
+</AppModule>

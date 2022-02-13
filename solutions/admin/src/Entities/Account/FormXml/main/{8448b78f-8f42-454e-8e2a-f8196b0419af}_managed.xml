@@ -218,25 +218,7 @@
         </rows>
       </header>
       <footer id="{9d8ae7b9-c85d-4830-8378-e9b348782262}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{f6dac02a-5482-4a97-8cff-9bd2994ecdf7}" showlabel="false" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{382a6dce-368e-4545-a71d-eb2be138ae41}" showlabel="false" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{1956d24d-823a-4634-9a68-f55a398f5aa7}" showlabel="false" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </footer>
     </form>
     <LocalizedNames>

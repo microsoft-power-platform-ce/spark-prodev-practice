@@ -93,6 +93,9 @@
       <RootComponent type="62" schemaName="crc8e_AdminApp" behavior="0" />
       <RootComponent type="62" schemaName="crc8e_AdminDashboardTest" behavior="0" />
       <RootComponent type="80" schemaName="crc8e_AdminApp" behavior="0" />
+      <RootComponent type="80" schemaName="crc8e_AdminDashboardTest" behavior="0" />
+      <RootComponent type="91" id="{a14a4e00-f368-46bc-9511-9eeb8ccbb17b}" schemaName="Cr90c73.Admin.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc5addba25892ac4" behavior="0" />
+      <RootComponent type="92" id="{25617b06-678c-ec11-b400-000d3a5d378b}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
@@ -122,6 +125,14 @@
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
         <Dependent type="80" schemaName="crc8e_AdminApp" displayName="Admin App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent type="80" schemaName="crc8e_AdminDashboardTest" displayName="Admin - Dashboard Test" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2112.4017)" />
+        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2112.4017)" />

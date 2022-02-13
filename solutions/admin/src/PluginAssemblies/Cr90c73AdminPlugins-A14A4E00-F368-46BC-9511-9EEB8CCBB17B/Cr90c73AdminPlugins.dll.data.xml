@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="Cr90c73.Admin.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc5addba25892ac4" PluginAssemblyId="a14a4e00-f368-46bc-9511-9eeb8ccbb17b" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/Cr90c73AdminPlugins-A14A4E00-F368-46BC-9511-9EEB8CCBB17B/Cr90c73AdminPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="Cr90c73.Admin.Plugins.AutoPopulateFoo, Cr90c73.Admin.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc5addba25892ac4" PluginTypeId="abd23e5d-f0e0-45f7-8c51-61effa896715" Name="Cr90c73.Admin.Plugins.AutoPopulateFoo">
+      <FriendlyName>a7aa9bd7-82b3-4f9c-8d35-3b28220c43b2</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>
