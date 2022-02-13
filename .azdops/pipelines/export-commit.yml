@@ -25,6 +25,6 @@ jobs:
         displayName: Export / Unpack Solution
       - script: |
           git add .
-          git commit -m "Automated commit of ${{ parameters.solutionName }} solution from ${{ parameters.environment }} of type ${{ parameters.packageType }}"
+          git commit -m "Automated commit of admin solution from Dev"
           git push
         displayName: Commit / Push
