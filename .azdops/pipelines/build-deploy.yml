@@ -13,10 +13,17 @@ stages:
         pool:
           vmImage: windows-latest
         steps:
-          - task: NuGetCommand@2
+          # - task: NuGetCommand@2
+          #   displayName: Restore NuGet packages
+          #   inputs:
+          #     restoreSolution: solutions/admin/Plugins/Plugins.sln
+          - task: VSBuild@1
+            displayName: Build solution
             inputs:
-              command: restore
-              restoreSolution: solutions/admin/Plugins/Plugins.sln
+              solution: solutions/admin/Plugins/Plugins.sln
+              configuration: Release
+          - publish: solutions/admin/Plugins/bin/Release
+            artifact: admin_Plugins
       - job: build_admin
         dependsOn: build_admin_Plugins
         displayName: Build admin
