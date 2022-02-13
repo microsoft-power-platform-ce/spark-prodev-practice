@@ -30,6 +30,8 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
+          - download:
+            artifact: admin_Plugins
           # Build .NET
           # Build PCF
           # Transpile / bundle TS/JS
@@ -37,6 +39,8 @@ stages:
               ./pwsh/Compress-Solution.ps1 `
                 -Name admin
             displayName: Pack Solution
+            env:
+              PLUGINS_DIR: $(Pipeline.Workspace)/admin_Plugins
           - publish: $(Build.ArtifactStagingDirectory)
             artifact: solution-artifact
       # - job: pack_pwsh

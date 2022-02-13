@@ -10,4 +10,5 @@ param(
 pac solution pack `
   --zipfile $ZipFile `
   --folder $Folder `
-  --packagetype $PackageType
+  --packagetype $PackageType `
+  --map "$Folder/map.xml"
