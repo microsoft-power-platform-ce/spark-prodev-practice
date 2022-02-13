@@ -1,6 +1,6 @@
 param(
   $Name,
-  $ZipFile = "$(& $PSScriptRoot/Get-ArtifactDownloadPath.ps1 solution-artifact)/$($Name)_managed.zip",
+  $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactDownloadPath.ps1 solution-artifact)/$($Name)_managed.zip",
   [Parameter(Mandatory=$true)]
   [string]$Url,
   [Parameter(Mandatory=$true)]
