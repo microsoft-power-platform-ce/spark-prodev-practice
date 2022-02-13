@@ -19,7 +19,7 @@ stages:
           deploy:
             steps:
               - pwsh: |
-                  ./pwsh/Import-Solution.ps1 `
+                  & $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
                     -Name ${{ parameters.solutionName }} `
                     -Url $(Url) `
                     -ClientId $(ClientId) `
