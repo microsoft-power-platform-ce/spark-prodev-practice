@@ -13,10 +13,10 @@ stages:
         pool:
           vmImage: windows-latest
         steps:
-          # - task: NuGetCommand@2
-          #   displayName: Restore NuGet packages
-          #   inputs:
-          #     restoreSolution: solutions/admin/Plugins/Plugins.sln
+          - task: NuGetCommand@2
+            displayName: Restore NuGet packages
+            inputs:
+              restoreSolution: solutions/admin/Plugins/Plugins.sln
           - task: VSBuild@1
             displayName: Build solution
             inputs:
