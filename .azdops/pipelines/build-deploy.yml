@@ -30,7 +30,7 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
-          - download:
+          - download: current
             artifact: admin_Plugins
           # Build .NET
           # Build PCF
