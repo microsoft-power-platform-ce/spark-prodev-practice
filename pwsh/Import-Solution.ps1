@@ -1,6 +1,8 @@
 param(
   $Name,
-  $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactDownloadPath.ps1 solution-artifact)/$($Name)_managed.zip",
+  $ArtifactPath = "$(& $PSScriptRoot/lib/Get-ArtifactDownloadPath.ps1 solution-artifact)"
+  $ZipFile = "$ArtifactPath/$($Name)_managed.zip",
+  $SettingsFile = "$ArtifactPath/config.prod.json",
   [Parameter(Mandatory=$true)]
   [string]$Url,
   [Parameter(Mandatory=$true)]
@@ -20,4 +22,5 @@ param(
 pac solution import `
   --path $ZipFile `
   --activate-plugins `
-  --async
+  --async `
+  --settings-file 

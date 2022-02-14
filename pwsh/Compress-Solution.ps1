@@ -1,8 +1,11 @@
 param(
   $Name,
-  $ZipFile = "$(& $PSScriptRoot/lib/Get-ArtifactStagingPath.ps1)/$Name.zip",
-  $Folder = "solutions/$Name/src",
-  $MapPath = "solutions/$Name/map.xml",
+  $ArtifactStagingPath = "$(& $PSScriptRoot/lib/Get-ArtifactStagingPath.ps1)",
+  $ZipFile = "$ArtifactStagingPath/$Name.zip",
+  $SolutionFolder = "solutions/$Name",
+  $SrcFolder = "$SolutionFolder/src",
+  $SettingsPath = "$SolutionFolder/config.prod.json",
+  $MapPath = "$SolutionFolder/map.xml",
   $PackageType = "Both"
 )
 
@@ -10,6 +13,10 @@ param(
 
 pac solution pack `
   --zipfile $ZipFile `
-  --folder $Folder `
+  --folder $SrcFolder `
   --packagetype $PackageType `
   --map $MapPath
+
+Copy-Item `
+  $SettingsPath `
+  $ArtifactStagingPath
