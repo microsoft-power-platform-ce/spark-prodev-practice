@@ -56,3 +56,20 @@ jobs:
         with:
           name: pwsh
           path: pwsh
+  deploy:
+    environment: prod
+    needs:
+      - build-admin
+      - pack-pwsh
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+      - name: Import admin
+        run: |
+          ./pwsh/Import-Solution.ps1 `
+            -Name admin `
+            -Url ${{ secrets.URL }} `
+            -ClientId ${{ secrets.CLIENT_ID }} `
+            -ClientSecret ${{ secrets.CLIENT_SECRET }} `
+            -TenantId ${{ secrets.TENANT_ID }}
+        shell: pwsh

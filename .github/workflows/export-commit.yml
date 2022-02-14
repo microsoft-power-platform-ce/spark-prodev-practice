@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT_TOKEN }}
       - run: |
-          & ./pwsh/Export-UnpackSolution.ps1 `
+          ./pwsh/Export-UnpackSolution.ps1 `
             -Name admin `
             -Url ${{ secrets.URL }} `
             -ClientId ${{ secrets.CLIENT_ID }} `

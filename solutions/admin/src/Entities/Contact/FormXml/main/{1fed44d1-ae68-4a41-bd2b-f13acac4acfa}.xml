@@ -21,52 +21,52 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{07326cde-7529-ddc0-e421-c0bcddd07b8a}" showlabel="true" ordinalvalue="10002" solutionaction="Modified">
+                      <cell id="{07326cde-7529-ddc0-e421-c0bcddd07b8a}" showlabel="true" ordinalvalue="10003" solutionaction="Modified">
                         <labels>
                           <label description="Job Title" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{a54c19c9-4722-ce25-60c5-2bb9452680d2}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Modified" />
+                      <cell id="{a54c19c9-4722-ce25-60c5-2bb9452680d2}" showlabel="true" locklevel="0" ordinalvalue="10004" solutionaction="Modified" />
                     </row>
                     <row>
-                      <cell id="{7d538a97-98eb-b438-72de-57a808b9a308}" showlabel="true" ordinalvalue="10004" solutionaction="Modified">
+                      <cell id="{7d538a97-98eb-b438-72de-57a808b9a308}" showlabel="true" ordinalvalue="10005" solutionaction="Modified">
                         <labels>
                           <label description="Email" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{215da2d0-2b64-3481-8d2d-16107d4d7e5b}" showlabel="true" ordinalvalue="10005" solutionaction="Modified">
+                      <cell id="{215da2d0-2b64-3481-8d2d-16107d4d7e5b}" showlabel="true" ordinalvalue="10006" solutionaction="Modified">
                         <labels>
                           <label description="Business Phone" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{290b48ba-c0cc-7746-6dda-93e240e4cc78}" showlabel="true" ordinalvalue="10006" solutionaction="Modified">
+                      <cell id="{290b48ba-c0cc-7746-6dda-93e240e4cc78}" showlabel="true" ordinalvalue="10007" solutionaction="Modified">
                         <labels>
                           <label description="Mobile Phone" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{1b54cdb3-1582-c29e-cc9e-9d4bc2a5700b}" showlabel="true" ordinalvalue="10007" solutionaction="Modified">
+                      <cell id="{1b54cdb3-1582-c29e-cc9e-9d4bc2a5700b}" showlabel="true" ordinalvalue="10008" solutionaction="Modified">
                         <labels>
                           <label description="Fax" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{408dda0b-48a7-c05c-e29a-56a93eb97172}" showlabel="true" ordinalvalue="10008" solutionaction="Modified">
+                      <cell id="{408dda0b-48a7-c05c-e29a-56a93eb97172}" showlabel="true" ordinalvalue="10009" solutionaction="Modified">
                         <labels>
                           <label description="Preferred Method of Contact" languagecode="1033" solutionaction="Added" />
                         </labels>
                       </cell>
                     </row>
                     <row>
-                      <cell id="{133d09d6-c374-954a-315b-435e1eeb722c}" showlabel="true" locklevel="0" ordinalvalue="10009" solutionaction="Modified" />
+                      <cell id="{133d09d6-c374-954a-315b-435e1eeb722c}" showlabel="true" locklevel="0" ordinalvalue="10010" solutionaction="Modified" />
                     </row>
                     <row>
                       <cell id="{bb2c2885-4e22-4c25-af5c-748749d16b2e}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Added">
@@ -74,6 +74,14 @@
                           <label description="Foo" languagecode="1033" />
                         </labels>
                         <control id="crc8e_foo" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="crc8e_foo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fa1e8ef4-5ba3-4760-9f6a-f4c5b8ac04ec}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Added">
+                        <labels>
+                          <label description="Bar" languagecode="1033" />
+                        </labels>
+                        <control id="crc8e_bar" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="crc8e_bar" disabled="false" />
                       </cell>
                     </row>
                   </rows>

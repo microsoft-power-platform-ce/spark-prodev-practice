@@ -32,7 +32,6 @@ stages:
         steps:
           - download: current
             artifact: admin_Plugins
-          # Build .NET
           # Build PCF
           # Transpile / bundle TS/JS
           - pwsh: |
@@ -66,7 +65,7 @@ stages:
             deploy:
               steps:
                 - pwsh: |
-                    & $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
+                    $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
                       -Name admin `
                       -Url $(Url) `
                       -ClientId $(ClientId) `
