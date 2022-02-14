@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="crc8e_EnvironmentName">
+  <displayname default="Environment Name">
+    <label description="Environment Name" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.1.0.1</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>
