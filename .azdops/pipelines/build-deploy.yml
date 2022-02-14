@@ -67,6 +67,7 @@ stages:
                 - pwsh: |
                     $(Pipeline.Workspace)/pwsh/Import-Solution.ps1 `
                       -Name admin `
+                      -SettingsDescriptor prod `
                       -Url $(Url) `
                       -ClientId $(ClientId) `
                       -ClientSecret $(ClientSecret) `

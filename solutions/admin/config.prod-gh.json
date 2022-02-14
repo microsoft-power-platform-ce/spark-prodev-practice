@@ -1,0 +1,30 @@
+{
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "crc8e_EnvironmentName",
+      "Value": "Prod (GitHub)"
+    }
+  ],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "crc8e_sharedcommondataserviceforapps_15fd2",
+      "ConnectionId": "b9f05177-c579-431e-84b5-a9cb0d4f6f53",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    },
+    {
+      "LogicalName": "crc8e_sharedvisualstudioteamservices_5360c",
+      "ConnectionId": "0df5dcea-d8ad-4440-84be-cee87fe14268",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_visualstudioteamservices"
+    },
+    {
+      "LogicalName": "crc8e_sharedvisualstudioteamservices_b2696",
+      "ConnectionId": "0df5dcea-d8ad-4440-84be-cee87fe14268",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_visualstudioteamservices"
+    },
+    {
+      "LogicalName": "new_sharedcommondataserviceforapps_392c4",
+      "ConnectionId": "b9f05177-c579-431e-84b5-a9cb0d4f6f53",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    }
+  ]
+}

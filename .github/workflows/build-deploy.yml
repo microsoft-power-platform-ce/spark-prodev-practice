@@ -68,6 +68,7 @@ jobs:
         run: |
           ./pwsh/Import-Solution.ps1 `
             -Name admin `
+            -SettingsDescriptor prod-gh `
             -Url ${{ secrets.URL }} `
             -ClientId ${{ secrets.CLIENT_ID }} `
             -ClientSecret ${{ secrets.CLIENT_SECRET }} `

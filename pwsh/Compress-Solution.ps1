@@ -4,7 +4,6 @@ param(
   $ZipFile = "$ArtifactStagingPath/$Name.zip",
   $SolutionFolder = "solutions/$Name",
   $SrcFolder = "$SolutionFolder/src",
-  $SettingsPath = "$SolutionFolder/config.prod.json",
   $MapPath = "$SolutionFolder/map.xml",
   $PackageType = "Both"
 )
@@ -18,5 +17,5 @@ pac solution pack `
   --map $MapPath
 
 Copy-Item `
-  $SettingsPath `
+  "$SolutionFolder/*.json" `
   $ArtifactStagingPath
