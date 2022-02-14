@@ -23,4 +23,4 @@ pac solution import `
   --path $ZipFile `
   --activate-plugins `
   --async `
-  --settings-file 
+  --settings-file $SettingsFile
