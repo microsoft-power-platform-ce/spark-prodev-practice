@@ -1,6 +1,6 @@
 param(
   $Name,
-  $ArtifactPath = "$(& $PSScriptRoot/lib/Get-ArtifactDownloadPath.ps1 solution-artifact)"
+  $ArtifactPath = "$(& $PSScriptRoot/lib/Get-ArtifactDownloadPath.ps1 solution-artifact)",
   $ZipFile = "$ArtifactPath/$($Name)_managed.zip",
   $SettingsFile = "$ArtifactPath/config.prod.json",
   [Parameter(Mandatory=$true)]
