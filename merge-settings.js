@@ -3,17 +3,16 @@ const { join } = require("path");
 const { cwd } = require("process");
 
 const settingsFilePrefix = "config";
+const templateFileName = `${settingsFilePrefix}.json`;
+const environments = ["prod", "prod-gh"];
 
 const getSolutionFolder = () => process.argv.slice(2)[0];
-const listEnvironmentSettingsFilesInFolder =
-  (solutionFolder) => async (templateFileName) =>
-    (await readdir(join(cwd(), solutionFolder))).filter(
-      (fileName) =>
-        fileName !== templateFileName &&
-        fileName.match(`^${settingsFilePrefix}.*\.json$`)
-    );
+const listEnvironmentSettingsFiles = () =>
+  environments.map(
+    (environment) => `${settingsFilePrefix}.${environment}.json`
+  );
 const readSettingsFileInFolder = (solutionFolder) => async (fileName) => {
-  const buffer = await readFile(join(solutionFolder, fileName));
+  const buffer = await readFile(join(cwd(), solutionFolder, fileName));
   const contents = buffer.toString();
   const template = JSON.parse(contents);
   return template;
@@ -41,26 +40,28 @@ const applyEnvironmentSettingsToTemplate =
 
 (async () => {
   const solutionFolder = getSolutionFolder();
-  const listEnvironmentSettingsFiles =
-    listEnvironmentSettingsFilesInFolder(solutionFolder);
+  const environmentFileNames = listEnvironmentSettingsFiles();
   const readSettingsFile = readSettingsFileInFolder(solutionFolder);
 
-  const templateFileName = `${settingsFilePrefix}.json`;
   const template = await readSettingsFile(templateFileName);
   const applyEnvironmentSettings = applyEnvironmentSettingsToTemplate(template);
 
-  const environmentFileNames = await listEnvironmentSettingsFiles(
-    templateFileName
-  );
   await Promise.all(
     environmentFileNames.map(async (fileName) => {
-      const environmentSettings = await readSettingsFile(fileName);
-      const newEnvironmentSettings =
-        applyEnvironmentSettings(environmentSettings);
-      await writeFile(
-        join(solutionFolder, fileName),
-        JSON.stringify(newEnvironmentSettings, null, "  ")
-      );
+      try {
+        const environmentSettings = await readSettingsFile(fileName);
+        const newEnvironmentSettings =
+          applyEnvironmentSettings(environmentSettings);
+        await writeFile(
+          join(cwd(), solutionFolder, fileName),
+          JSON.stringify(newEnvironmentSettings, null, "  ")
+        );
+      } catch {
+        await writeFile(
+          join(cwd(), solutionFolder, fileName),
+          JSON.stringify(template, null, "  ")
+        );
+      }
     })
   );
 })().catch(console.error);
