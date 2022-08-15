@@ -1,5 +1,6 @@
 param(
   [Parameter(Mandatory=$true)]
+  [ValidateSet("Both", "Managed"]
   [string]$PackageType,
   [Parameter(Mandatory=$true)]
   [string]$Path,
