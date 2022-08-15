@@ -5,6 +5,7 @@ param(
   $SolutionFolder = "solutions/$Name",
   $SrcFolder = "$SolutionFolder/src",
   $MapPath = "$SolutionFolder/map.xml",
+  [ValidateSet("Both", "Managed", "Unmanaged")]  
   $PackageType = "Both"
 )
 
