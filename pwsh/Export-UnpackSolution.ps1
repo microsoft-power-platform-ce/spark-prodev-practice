@@ -3,6 +3,7 @@ param(
   [string]$Name,
   [string]$Path = "./$Name.zip",
   [string]$Folder = "solutions/$Name/src",
+  [ValidateSet("Both", "Managed", "Unmanaged")]
   [string]$PackageType = "Both",
   [Parameter(Mandatory=$true)]
   [string]$Url,
